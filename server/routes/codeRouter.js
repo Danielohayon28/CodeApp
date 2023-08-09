@@ -3,12 +3,6 @@ const router = express.Router();
 const codeBlocksModel = require("../models/CodeBlockModel");
 
 
-router.get("/check", (request, response) => {
-    response.send("Hi there");
-});
-
-
-
 router.get(`/:id`, async (req, res) => {
   const id = req.params.id;
   console.log("GET request", id);

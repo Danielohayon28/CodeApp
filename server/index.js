@@ -20,10 +20,6 @@ const io = socketIO(server, {
 });
 
 app.use("/code", codeRoutes);
-app.get("/check/2", (request, response) => {
-    response.send("Hi there");
-});
-
 
 
 mongoose
