@@ -2,10 +2,12 @@ const express = require("express");
 const cors = require('cors');
 const app = express();
 app.use(cors());
-app.get("/", (request, response) => {
+
+
+app.get("/check/2", (request, response) => {
     response.send("Hi there");
 });
-app.get("/check/2", (request, response) => {
+app.get("/", (request, response) => {
     response.send("Hi there");
 });
 app.listen(5001, () => {
