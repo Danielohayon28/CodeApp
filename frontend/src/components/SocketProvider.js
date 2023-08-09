@@ -7,7 +7,10 @@ const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const socketInstance = io("https://code-app-server-ten.vercel.app");
+    const socketInstance = io("https://code-app-server-ten.vercel.app",{secure:true});
+    socketInstance.on('connect',()=>{
+      console.log('connection');
+    })
     setSocket(socketInstance);
 
     return () => {
