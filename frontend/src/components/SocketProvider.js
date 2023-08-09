@@ -7,7 +7,7 @@ const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const socketInstance = io("http://localhost:8000");
+    const socketInstance = io("https://code-app-server-ten.vercel.app");
     setSocket(socketInstance);
 
     return () => {
