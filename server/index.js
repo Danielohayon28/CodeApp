@@ -23,9 +23,16 @@ const io = socketIO(server, {
 app.get("/check/2", (request, response) => {
     response.send("Hi there");
 });
-app.get("/", (request, response) => {
-    response.send("Hi there");
-});
-app.listen(5001, () => {
-    console.log("Listen on the port 5001...");
+
+
+
+mongoose
+  .connect(
+    "mongodb+srv://mika80666:iL30iQ2Y2R166ODw@cluster0.6skunbx.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("Connected to MongoDB successfully");
+    server.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });  
 });
