@@ -8,18 +8,18 @@ const codeRoutes = require("./routes/codeRouter");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/code", codeRoutes);
 const PORT = 8000;
 const MAX_STUDENTS_PER_CLASS = 1;
 
 const server = http.createServer(app); //http server with express app
 
 const io = socketIO(server, {
-  cors: {
-    origin: "*",
-  },
+    cors: {
+        origin: "*",
+    },
 });
 
+app.use("/code", codeRoutes);
 app.get("/check/2", (request, response) => {
     response.send("Hi there");
 });
